@@ -41,16 +41,26 @@ server <- function(input, output) {
 
   output$tab <- renderTable({
     mapper <- group_same_words(words())
-    count_mentions_in_dataframe(
+    counts <- count_mentions_in_dataframe(
       df(),
       unlist(words()),
       unlist(input$ignore_case),
       input$word_boundary
-    ) %>%
-      left_join(mapper, by = "word") %>%
-      group_by(keyword) %>%
-      summarize(n = as.integer(sum(mentions))) %>%
-      arrange(desc(n))
+    )
+    if (nrow(counts) > 0) {
+      counts %>%
+        left_join(mapper, by = "word") %>%
+        group_by(keyword) %>%
+        summarize(n = as.integer(sum(mentions))) %>%
+        arrange(desc(n))
+    } else {
+      data.frame(
+        words = unique(mapper$keyword),
+        n = 0L
+      )
+    }
+
+
   })
 }
 
