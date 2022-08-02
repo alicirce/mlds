@@ -38,8 +38,7 @@ ui <- fluidPage(
 server <- function(input, output) {
   df <- reactive({load_data(input$datasource)})
   words <- reactive({parse_string(input$word_input)})
-
-  output$tab <- renderTable({
+  counts <- reactive({
     mapper <- group_same_words(words())
     counts <- count_mentions_in_dataframe(
       df(),
@@ -59,7 +58,12 @@ server <- function(input, output) {
         n = 0L
       )
     }
+  })
 
+  output$tab <- renderTable({
+    counts()
+  })
+  output$plot <- renderPlot({
 
   })
 }
