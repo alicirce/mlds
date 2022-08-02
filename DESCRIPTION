@@ -13,13 +13,16 @@ Imports:
     dplyr,
     ggplot2,
     ggtextcounts (>= 0.0.0.1),
-    leninature,
-    leninism,
+    leninature (>= 0.0.0.1),
+    leninism (>= 0.0.0.1),
     magrittr,
-    marxmywords,
+    marxmywords (>= 0.0.0.1),
     shiny
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Remotes:  
-    alicirce/ggtextcounts
+    alicirce/ggtextcounts,
+    alicirce/leninature,
+    alicirce/leninism,
+    alicirce/marxmywords
