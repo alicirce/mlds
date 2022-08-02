@@ -4,12 +4,12 @@
 \name{mlds-package}
 \alias{mlds}
 \alias{mlds-package}
-\title{mlds: What the Package Does (One Line, Title Case)}
+\title{mlds: Explore the works of Marxist-Leninists via a Shiny app}
 \description{
-What the package does (one paragraph).
+This Shiny app allows users to query Marxist-Leninist texts for keywords of interest, and provides relevant passages and word frequencies in the form of human-readable tables and graphs.
 }
 \author{
-\strong{Maintainer}: First Last \email{first.last@example.com} (\href{https://orcid.org/YOUR-ORCID-ID}{ORCID})
+\strong{Maintainer}: Alice Circe Malone \email{circemalone@gmail.com}
 
 }
 \keyword{internal}

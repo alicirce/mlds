@@ -1,14 +1,15 @@
 Package: mlds
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
+Title: Explore the works of Marxist-Leninists via a Shiny app
+Version: 0.0.0.1
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+    person("Alice Circe", "Malone", ,"circemalone@gmail.com", role = c("aut", "cre"))
+Description: This Shiny app allows users to query Marxist-Leninist texts for 
+    keywords of interest, and provides relevant passages and word frequencies
+    in the form of human-readable tables and graphs.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.1
 Imports: 
     dplyr,
     ggplot2,
@@ -21,7 +22,7 @@ Imports:
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
-Remotes:  
+Remotes: 
     alicirce/ggtextcounts,
     alicirce/leninature,
     alicirce/leninism,
