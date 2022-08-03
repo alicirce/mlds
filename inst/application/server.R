@@ -1,7 +1,8 @@
-library(mlds)
 library(ggplot2)
 library(dplyr)
 library(ggtextcounts)
+library(mlds)
+
 #' Server
 #' @noRd
 server <- function(input, output) {
