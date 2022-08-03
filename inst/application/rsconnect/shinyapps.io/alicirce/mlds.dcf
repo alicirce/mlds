@@ -1,13 +1,11 @@
 name: mlds
-title: mlds
+title:
 username:
 account: alicirce
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
-appId: 6731788
-bundleId: 6160300
+appId: 6731908
+bundleId: 6160392
 url: https://alicirce.shinyapps.io/mlds/
-when: 1659499509.25198
-lastSyncTime: 1659499509.25205
-asMultiple: FALSE
-asStatic: FALSE
+when: 1659500437.8648
+lastSyncTime: 1659500437.86485
