@@ -4,6 +4,7 @@
 #' This function removes unnecessary rows.
 #'
 #' @param datasource string indicating which data source to use
+#' @export
 
 load_data <- function(datasource = c("marx_cap", "lenin_en", "lenin_ru")) {
   datasource <- match.arg(datasource)
@@ -20,13 +21,3 @@ load_data <- function(datasource = c("marx_cap", "lenin_en", "lenin_ru")) {
   }
 }
 
-#' Available datasets
-#'
-#' Named list, with names being concisely named human-readable descriptions,
-#' and values being short programming-friendly labels.
-
-data_options <- list(
-  "Marx's Capital" = "marx_cap",
-  "Lenin's collected works (English)" = "lenin_en",
-  "Lenin's collected works (Russian)" = "lenin_ru"
-)

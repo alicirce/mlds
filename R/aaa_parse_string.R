@@ -1,6 +1,7 @@
 #' Parse comma-separated string input into keyword vector
 #'
 #' @param word_input string of comma separated key words
+#' @export
 
 parse_string <- function(word_input) {
   if(is.null(word_input) || word_input == "") return(NULL)
@@ -15,6 +16,7 @@ parse_string <- function(word_input) {
 #'
 #' @param list_of_words list, with each element being a vector of words.
 #'   see example output of `parse_string`
+#' @export
 group_same_words <- function(list_of_words) {
   mapper <- list_of_words
   names(mapper) <- lapply(list_of_words, `[`, 1)

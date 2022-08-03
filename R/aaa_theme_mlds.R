@@ -1,5 +1,5 @@
 #' A minimal theme for plotting
-#' @noRd
+#' @export
 theme_mlds <- function() {
   theme_classic() %+replace%
     theme(
