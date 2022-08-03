@@ -41,7 +41,52 @@ ui <- fluidPage(
         )
       )
     )
-  )
+  ),
+  hr(),
+  HTML("<strong>Data Source</strong>:"),
+  HTML(paste0(
+    "<li>Marx's <i>Capital</i>: ",
+    html_link(
+      'https://www.marxists.org/archive/marx/works/1867-c1/',
+      "Marx/Engels Internet Archive"
+    ),
+    " via ",
+    html_link(
+      'https://alicirce.github.io/marxmywords/',
+      "marxmywords"
+    ),
+    "</li>"
+  )),
+  HTML(paste0(
+    "<li>Lenin's Collected Works (English): ",
+    html_link(
+      'https://www.marxists.org/archive/lenin/index.htm',
+      "Lenin Internet Archive"
+    ),
+    " via ",
+    html_link(
+      'https://alicirce.github.io/leninature/',
+      "leninature"
+    ),
+    "</li>"
+  )),
+  HTML(paste0(
+    "<li>Lenin's Collected Works (Russian): ",
+    html_link(
+      'https://leninism.su/works',
+      "leninism.su"
+    ),
+    " via ",
+    html_link(
+      'https://github.com/alicirce/leninism',
+      "leninism"
+    ),
+    "</li>"
+  )),
+  HTML(paste0(
+    "<br><strong>Contact</strong>: ",
+    html_link("https://twitter.com/alicirce", "@alicirce")
+  ))
 )
 
 #' Server
