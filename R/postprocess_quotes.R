@@ -18,7 +18,7 @@ post_process_quotes <- function(
     counts %>%
       filter(mentions > 0) %>%
       mutate(link = I(html_link(url_leninature(url)))) %>%
-      select(word, title, link, text)
+      select(word, year, title, link, text)
 
   } else {
     counts %>%

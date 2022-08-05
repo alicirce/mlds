@@ -11,7 +11,9 @@ load_data <- function(datasource = c("marx_cap", "lenin_en", "lenin_ru")) {
   if (datasource == "marx_cap") {
     keep_sections <- c("body", "footnotes")
     marxmywords::capital_vol1 %>%
-      filter(section %in% keep_sections)
+      filter(section %in% keep_sections) %>%
+      # remove titles
+      filter(toupper(text) != text)
   } else if (datasource == "lenin_en"){
     leninature::lenin
   } else {

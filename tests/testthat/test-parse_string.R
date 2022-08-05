@@ -19,6 +19,7 @@ test_that("string input parsing works: multi-line", {
 
 test_that("string input null handling", {
   expect_null(parse_string(""))
+  expect_null(parse_string(character(0)))
   expect_null(parse_string(NULL))
 })
 
@@ -35,4 +36,12 @@ test_that("group like words returns expected data frame", {
     as.character(sort(unique(words_out$keyword))),
     c("surplus-value", "labour-power")
   )
+})
+
+test_that("group like words handles null", {
+  words_in <- NULL
+  words_out <- group_same_words(words_in)
+  expect_true(inherits(words_out, "data.frame"))
+  expect_named(words_out, c("word", "keyword"))
+  expect_true(nrow(words_out) == 0)
 })

@@ -8,7 +8,10 @@ library(mlds)
 server <- function(input, output) {
   datasource <- reactive({input$datasource})
   df <- reactive({load_data(datasource())})
-  words <- reactive({parse_string(input$word_input)})
+  words <- reactive({
+    req(input$word_input)
+    parse_string(input$word_input)
+  })
   raw_counts <- reactive({
     count_mentions_in_dataframe(
       df(),
@@ -27,7 +30,7 @@ server <- function(input, output) {
         arrange(desc(n))
     } else {
       data.frame(
-        words = unique(mapper$keyword),
+        keyword = unique(mapper$keyword),
         n = 0L
       )
     }
@@ -39,8 +42,12 @@ server <- function(input, output) {
   observe({
     output$plot <- renderPlot({
       pretty_name <- names(data_options[data_options == datasource()])[1]
-      counts() %>%
-        mutate(keyword = reorder(keyword, n)) %>%
+      counts_to_plot <- counts()
+      if (max(counts_to_plot$n, na.rm = TRUE) > 0) {
+        counts_to_plot <- counts_to_plot %>%
+          mutate(keyword = reorder(keyword, n))
+      }
+      counts_to_plot %>%
         ggplot() +
         aes(y = keyword, x = n, color = keyword) +
         geom_h_lollipop() +
